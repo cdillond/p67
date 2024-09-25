@@ -116,8 +116,6 @@ void printHex(u8 *data, u64 len)
 
 void init_secret_keys(union secret_key keys[], u64 n)
 {
-    memset((void *)keys, 0, sizeof(union secret_key));
-    
     keys[0].nums[3] = n;
     keys[1].nums[3] = n;
     keys[2].nums[3] = n;
@@ -138,7 +136,7 @@ void *make_keys(void *_args)
     secp256k1_context *ctx = secp256k1_context_create(SECP256K1_CONTEXT_NONE);
 
     // SET INITIAL SECRET KEY VALUES
-    union secret_key secret_keys[4];
+    union secret_key secret_keys[4] = {};
     init_secret_keys(secret_keys, args->n);
 
     // SECP256K1 PUBLIC KEYS
