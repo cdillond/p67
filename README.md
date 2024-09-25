@@ -1,0 +1,4 @@
+# About
+p67 is a program designed to solve [bitcoin puzzle 67](https://privatekeys.pw/puzzles/bitcoin-puzzle-tx) through brute force. Unlike other programs with similar aims, p67 does not make use of GPU-acclerated code. Because of this, it is slower than those programs, but it is also more portable. The code for the RIPEMD160 hash function is taken and slightly modified from https://github.com/trezor/trezor-crypto.
+## Dependencies
+p67 depends on [libopenssl](https://openssl-library.org/) and [libsecp256k1](https://github.com/bitcoin-core/secp256k1). It has only been tested on Linux, and it won't work on computers running non-POSIX compatible OSes.
