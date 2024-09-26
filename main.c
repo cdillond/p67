@@ -168,10 +168,6 @@ void *make_keys(void *_args)
                 goto success;
             }
 
-#ifdef COUNT_KEYS
-            count++;
-#endif
-
 #ifdef DEBUG
             pthread_mutex_lock(&mutex0);
             printf("CHECKED KEY\n");
@@ -187,6 +183,10 @@ void *make_keys(void *_args)
 #endif
         secret_keys[i].nums[3]++;
         }
+
+        #ifdef COUNT_KEYS
+            count++;
+#endif
     }
 
 error:
