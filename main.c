@@ -185,6 +185,7 @@ void *make_keys(void *_args)
             printHex(rmd_hashes[i], RIPEMD160_DIGEST_LENGTH);
             pthread_mutex_unlock(&mutex0);
 #endif
+        secret_keys[i].nums[3]++;
         }
     }
 
